@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='steam-picker',
-    version='0.1.2',
+    version='0.1.3',
     author='Jesse Johnson',
     author_email='holocronweaver@gmail.com',
     packages=['steampicker'],
