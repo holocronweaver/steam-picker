@@ -1,6 +1,6 @@
 import requests
 import steam as steamapi
-import utility
+import steampicker.utility as utility
 
 class Steam:
     def __init__(self, apikey):

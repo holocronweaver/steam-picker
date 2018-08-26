@@ -9,7 +9,7 @@ def load_steam_creds(path):
         A dict of Steam credentials.
     '''
     import yaml
-    from Steam import Steam
+    from steampicker.Steam import Steam
 
     creds = None
     if path.exists():
