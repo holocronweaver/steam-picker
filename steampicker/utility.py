@@ -8,6 +8,7 @@ def load_steam_creds(path):
     Returns:
         A dict of Steam credentials.
     '''
+    import os
     import yaml
     from steampicker.Steam import Steam
 
@@ -16,6 +17,8 @@ def load_steam_creds(path):
         with open(path, 'r') as f:
             creds = yaml.load(f)
     else:
+        if not path.parent.exists():
+            os.makedirs(path.parent)
         creds = {}
         creds['profile_url'] = input('Please enter your Steam profile URL [e.g., https://steamcommunity.com/id/MyUserName/home/]: ')
         creds['steamid'] = Steam.getSteamIdFromURL(creds['profile_url'])
