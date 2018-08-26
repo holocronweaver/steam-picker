@@ -34,7 +34,7 @@ class Steam:
             return None
 
         details = {}
-        if 'short_description' in raw_details:
+        if 'short_description' in raw_details and raw_details['short_description']:
             details['Summary'] = utility.remove_html_tags(raw_details['short_description'])
         if 'categories' in raw_details:
             details['Categories'] = [category['description'] for category in raw_details['categories']]

@@ -22,7 +22,6 @@ Pick a game from your personal Steam library!
 
 How about... 'Zeno Clash 2'?
 
-Summary:
 Categories: ['Single-player', 'Co-op', 'Steam Achievements', 'Full controller support', 'Steam Trading Cards', 'Steam Cloud', 'Steam Leaderboards']
 Genres:     ['Action', 'Indie']
 Platforms:  ['windows']
