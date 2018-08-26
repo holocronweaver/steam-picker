@@ -26,12 +26,16 @@ quick = {
         lambda x: 'mac' in x['Platforms']
     ),
     'multi': Filter(
-        'Multiplayer.',
+        'Multi-player.',
         lambda x: 'Multi-player' in x['Categories']
     ),
     'score': Filter(
         'Metracritic scores > 70. (Filters out games lacking Metacritic scores.)',
         lambda x: x['Metacritic']['score'] > 70
+    ),
+    'single': Filter(
+        'Single-player.',
+        lambda x: 'Single-player' in x['Categories']
     ),
     'vr': Filter(
         'VR support. (Steam store metadata does not categorize all VR-capable games, so this will miss some.)',
