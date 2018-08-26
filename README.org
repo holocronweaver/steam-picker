@@ -3,6 +3,7 @@ A Python 3 CLI for picking a random game from your Steam library!
 * Features
 - customizable filters (co-op, multiplayer, VR, high Metacritic rating, and more!)
 - concise game metadata (summary, platforms, categories, playtime, Metacritic score, etc.)
+- remembers your Steam ID and API key
 * Installation
 Requires Python 3.4 or higher.
 
