@@ -1,19 +1,17 @@
 #! /usr/bin/env python3
 from appdirs import AppDirs
 from pathlib import Path
+import pkg_resources
 import random
 
-import steampicker
 from steampicker import filters, Steam, utility
 
 print('Pick a game from your personal Steam library!')
 
 appdirs = AppDirs('steam-picker')
 creds_path = Path(appdirs.user_config_dir).joinpath('creds.yaml')
-steampicker_path = Path(steampicker.__file__).parent
 
-with open(steampicker_path.joinpath('party_time.txt'), 'r') as f:
-    party_time = f.read()
+party_time = pkg_resources.resource_string('steampicker', 'party_time.txt')
 
 creds = utility.load_steam_creds(creds_path)
 steam = Steam(creds['apikey'])
