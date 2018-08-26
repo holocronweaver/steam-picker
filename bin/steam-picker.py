@@ -67,15 +67,17 @@ while not exit_app:
         for alias, quick_filter in filters.quick.items():
             print("{:<12}{}".format("{}:".format(alias), quick_filter.text))
 
-        reply = input('\n[Quick filter alias <or> Python lambda x: filter body to add <or> filter ID to delete]: ')
+        reply = input('\n[Quick filter aliases (space separated)\n<or> Python lambda x: filter body to add\n<or> filter ID to delete]: ')
         if reply.isdigit():
             filterid = int(reply)
             try:
                 del active_filters[filterid]
             except:
                 print('Error: unable to delete that filter. Is the ID within range?')
-        elif reply in filters.quick:
-            active_filters.append(filters.quick[reply])
+        elif reply.split(' ')[0].strip() in filters.quick:
+            aliases = [x.strip() for x in reply.split(' ')]
+            for alias in aliases:
+                active_filters.append(filters.quick[alias])
         else:
             try:
                 text = 'lambda x: ' + reply
