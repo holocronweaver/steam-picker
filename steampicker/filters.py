@@ -13,6 +13,7 @@ default = []
 
 # The available quick filters.
 quick = {
+    #TODO: 'aaa' and 'indie'. Doesn't seem possible with current metadata.
     'coop': Filter(
         'Co-op games.',
         lambda x: any('Co-op' in category for category in x['Categories'])
@@ -30,8 +31,16 @@ quick = {
         lambda x: 'Multi-player' in x['Categories']
     ),
     'score': Filter(
-        'Metracritic scores > 70. (Filters out games lacking Metacritic scores.)',
-        lambda x: x['Metacritic']['score'] > 70
+        'Metracritic scores >= 70. (Filters out games lacking Metacritic scores.)',
+        lambda x: x['Metacritic']['score'] >= 70
+    ),
+    'score80': Filter(
+        'Metracritic scores >= 80. (Filters out games lacking Metacritic scores.)',
+        lambda x: x['Metacritic']['score'] >= 80
+    ),
+    'score90': Filter(
+        'Metracritic scores >= 90. (Filters out games lacking Metacritic scores.)',
+        lambda x: x['Metacritic']['score'] >= 90
     ),
     'single': Filter(
         'Single-player.',
