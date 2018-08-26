@@ -8,10 +8,11 @@ Requires Python 3.4 or higher.
 
 Still in development, no setup.py yet, but this should install the needed dependencies:
 
-pip3 install -U steam requests pyyaml
+~pip3 install -U steam requests pyyaml~
 * Usage
-./steam-picker
+~./steam-picker~
 
+#+begin_src bash
 Pick a game from your personal Steam library!
 
 <enter your Steam profile URL and API key>
@@ -56,3 +57,4 @@ Alright, 'Secrets of Grindea' it is.
 ░▐█▀█ ▄▀▄ █▀▀▄ ▀█▀ ▀▄─▄▀──░█▀█▀█ ▀ █▄─▄█ █▀▀░█░█░█
 ░▐█▄█ █▀█ █▐█▀ ─█─ ──█──────░█── █ █─█─█ █▀▀─▀─▀─▀
 ░▐█── ▀─▀ ▀─▀▀ ─▀─ ──▀─────░▄█▄─ ▀ ▀───▀ ▀▀▀░▄░▄░▄
+#+end_src
