@@ -25,6 +25,10 @@ quick = {
         'Linux support.',
         lambda x: 'linux' in x['Platforms']
     ),
+    'mac': Filter(
+        'MacOS support.',
+        lambda x: 'mac' in x['Platforms']
+    ),
     'multi': Filter(
         'Multiplayer.',
         lambda x: 'Multi-player' in x['Categories']
