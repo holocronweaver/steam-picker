@@ -13,10 +13,14 @@ default = []
 
 # The available quick filters.
 quick = {
-    #TODO: 'aaa' and 'indie'. Doesn't seem possible with current metadata.
+    #TODO: 'aaa' and proper 'indie'. Doesn't seem possible with current metadata.
     'coop': Filter(
         'Co-op games.',
         lambda x: any('Co-op' in category for category in x['Categories'])
+    ),
+    'indie': Filter(
+        'Indie games. (Some indie games are not tagged, so expect false negatives.)',
+        lambda x: 'Indie' in x['Genres']
     ),
     'linux': Filter(
         'Linux support.',
