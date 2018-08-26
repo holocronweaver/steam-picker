@@ -12,6 +12,8 @@ appdirs = AppDirs('steam-picker')
 creds_path = Path(appdirs.user_config_dir).joinpath('creds.yaml')
 
 party_time = pkg_resources.resource_string('steampicker', 'party_time.txt')
+if type(party_time) is bytes:
+    party_time = party_time.decode()
 
 creds = utility.load_steam_creds(creds_path)
 steam = Steam(creds['apikey'])
