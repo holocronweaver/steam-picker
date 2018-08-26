@@ -77,7 +77,10 @@ while not exit_app:
         elif reply.split(' ')[0].strip() in filters.quick:
             aliases = [x.strip() for x in reply.split(' ')]
             for alias in aliases:
-                active_filters.append(filters.quick[alias])
+                try:
+                    active_filters.append(filters.quick[alias])
+                except:
+                    print("Error: alias '{}' could not be applied.".format(alias))
         else:
             try:
                 text = 'lambda x: ' + reply
