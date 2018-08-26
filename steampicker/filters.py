@@ -17,10 +17,6 @@ quick = {
         'Co-op games.',
         lambda x: any('Co-op' in category for category in x['Categories'])
     ),
-    'high': Filter(
-        'Metracritic scores > 70. (Filters out games without Metacritic scores.)',
-        lambda x: x['Metacritic']['score'] > 70
-    ),
     'linux': Filter(
         'Linux support.',
         lambda x: 'linux' in x['Platforms']
@@ -32,6 +28,10 @@ quick = {
     'multi': Filter(
         'Multiplayer.',
         lambda x: 'Multi-player' in x['Categories']
+    ),
+    'score': Filter(
+        'Metracritic scores > 70. (Filters out games lacking Metacritic scores.)',
+        lambda x: x['Metacritic']['score'] > 70
     ),
     'vr': Filter(
         'VR support. (Steam store metadata does not categorize all VR-capable games, so this will miss some.)',
