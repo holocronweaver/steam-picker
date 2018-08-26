@@ -6,7 +6,7 @@ setup(
     author='Jesse Johnson',
     author_email='holocronweaver@gmail.com',
     packages=['steampicker'],
-    scripts=['bin/steam-picker'],
+    scripts=['bin/steam-picker.py', 'bin/steam-picker'],
     include_package_data=True,
     # url='http://pypi.python.org/pypi/MyApplication_v010/',
     license='LICENSE.txt',
