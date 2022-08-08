@@ -1,24 +1,26 @@
 import requests
-import steam as steamapi
+from steam.webapi import WebAPI
+from steam.steamid import SteamID
 import steampicker.utility as utility
 
 class Steam:
     def __init__(self, apikey):
-        self.api = steamapi.WebAPI(apikey)
-        # self.client = steamapi.SteamClient()
+        self.api = WebAPI(apikey)
+        # self.client = steamapi.SteamClient(https://steamcommunity.com/id/BBUCommander/home/)
 
     def validateWebApiKey(apikey):
-        steamapi.WebAPI(apikey)
+        WebAPI(apikey)
 
     def getSteamIdFromURL(profile_url):
-        return steamapi.steamid.from_url(profile_url)
+        return SteamID.from_url(profile_url)
 
     def getOwnedGames(self, steamid):
         response = self.api.IPlayerService.GetOwnedGames(
             steamid                   = steamid,
             include_appinfo           = True,
             include_played_free_games = True,
-            appids_filter             = None
+            appids_filter             = None,
+            include_free_sub          = True,
         )
         return response['response']['games']
 

@@ -15,7 +15,7 @@ def load_steam_creds(path):
     creds = None
     if path.exists():
         with open(path, 'r') as f:
-            creds = yaml.load(f)
+            creds = yaml.load(f, Loader=yaml.Loader)
     else:
         if not path.parent.exists():
             os.makedirs(path.parent)
