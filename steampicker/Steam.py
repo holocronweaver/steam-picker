@@ -21,6 +21,8 @@ class Steam:
             include_played_free_games = True,
             appids_filter             = None,
             include_free_sub          = True,
+            language                  = "en",
+            include_extended_appinfo  = True
         )
         return response['response']['games']
 
