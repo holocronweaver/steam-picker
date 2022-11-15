@@ -67,3 +67,4 @@ To develop this package or run it without installing:
 1. Install [[https://python-poetry.org/][poetry]].
 2. Install dependencies using app root directory: ~poetry install~
 3. Run the app: ~poetry run steam-picker~
+4. Build the app (see ~dist~ for wheel and archive): ~poetry build~
