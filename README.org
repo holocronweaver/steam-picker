@@ -3,16 +3,16 @@ A Python 3 CLI for picking a random game from your Steam library!
 * Features
 - customizable filters (co-op, multiplayer, VR, high Metacritic rating, and more!)
 - concise game metadata (summary, platforms, categories, playtime, Metacritic score, etc.)
-- remembers your Steam ID and API key
+- remembers your Steam ID and API key, only have to enter once
 * Installation
-Requires Python 3.4 or higher.
+Requires Python 3.7 or higher.
 
-~python3 setup.py install --user~
+To install, just run the following command in the app root directory:
+
+~pip3 install --user .~
 
 Feel free to omit the ~--user~ flag if you normally install packages
 to the root directory.
-
-Once this package matures I plan to add it to PyPi.
 * Usage
 Assuming your Python package bin is in your ~$PATH~, just run ~steam-picker~ from the command line.
 
@@ -61,3 +61,9 @@ Alright, 'Secrets of Grindea' it is.
 ░▐█▄█ █▀█ █▐█▀ ─█─ ──█──────░█── █ █─█─█ █▀▀─▀─▀─▀
 ░▐█── ▀─▀ ▀─▀▀ ─▀─ ──▀─────░▄█▄─ ▀ ▀───▀ ▀▀▀░▄░▄░▄
 #+end_src
+* Development
+To develop this package or run it without installing:
+
+1. Install [[https://python-poetry.org/][poetry]].
+2. Install dependencies using app root directory: ~poetry install~
+3. Run the app: ~poetry run steam-picker~
