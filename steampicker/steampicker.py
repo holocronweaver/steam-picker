@@ -26,6 +26,9 @@ def run():
     while not exit_app:
         game = random.choice(owned_games)
 
+        if not 'appid' in game:
+            continue
+
         details = steam.getAppDetails(game['appid']) or {}
         details['Playtime'] = {'hours': game['playtime_forever'] // 60}
         details['Steam URL'] = 'https://store.steampowered.com/app/{}/'.format(game['appid'])
