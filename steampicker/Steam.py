@@ -6,7 +6,7 @@ import steampicker.utility as utility
 class Steam:
     def __init__(self, apikey):
         self.api = WebAPI(apikey)
-        # self.client = steamapi.SteamClient(https://steamcommunity.com/id/BBUCommander/home/)
+        # self.client = steamapi.SteamClient(https://steamcommunity.com/id/mysteamidhere/home/)
 
     def validateWebApiKey(apikey):
         WebAPI(apikey)
