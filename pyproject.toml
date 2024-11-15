@@ -10,11 +10,12 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.9"
+appdirs = "^1.4.4"
 PyYAML = "^6.0"
 requests = "^2.31.0"
+setuptools = "^75.5.0"
 steam = "^1.4.3"
-appdirs = "^1.4.4"
 
 [tool.poetry.dev-dependencies]
 
