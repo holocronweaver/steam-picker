@@ -11,7 +11,7 @@ Run the following command in the app root directory:
 
 ~pipx install .~
 
-Add the --~editable~ flag if you want to hack on the source code and have your changes automatically reflected in the installed app:
+Add the ~--editable~ flag if you want to hack on the source code and have your changes automatically reflected in the installed app:
 
 ~pipx install --editable .~
 ** pip
