@@ -6,8 +6,8 @@ A Python 3 CLI for picking a random game from your Steam library!
 - remembers your Steam ID and API key, only have to enter once
 * Installation
 Requires Python 3.9 or higher.
-** pipx
-Run the following command in the app root directory:
+** pipx [recommended]
+[[https://pipx.pypa.io/][Install pipx]] if you haven't already, then run the following command in the app root directory:
 
 ~pipx install .~
 
