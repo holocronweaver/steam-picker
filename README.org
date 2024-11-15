@@ -5,9 +5,17 @@ A Python 3 CLI for picking a random game from your Steam library!
 - concise game metadata (summary, platforms, categories, playtime, Metacritic score, etc.)
 - remembers your Steam ID and API key, only have to enter once
 * Installation
-Requires Python 3.7 or higher.
+Requires Python 3.9 or higher.
+** pipx
+Run the following command in the app root directory:
 
-To install, just run the following command in the app root directory:
+~pipx install .~
+
+Add the --~editable~ flag if you want to hack on the source code and have your changes automatically reflected in the installed app:
+
+~pipx install --editable .~
+** pip
+Run the following command in the app root directory:
 
 ~pip3 install --user .~
 
