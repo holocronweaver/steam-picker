@@ -10,7 +10,7 @@ dependencies = [
     "appdirs>=1.4.4,<2",
     "PyYAML~=6.0",
     "requests>=2.31.0,<3",
-    "setuptools>=75.5.0,<76",
+    "setuptools>=78.1.1,<79",
     "steam>=1.4.3,<2",
 ]
 
