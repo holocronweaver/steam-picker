@@ -1,27 +1,31 @@
-[tool.poetry]
+[project]
 name = "steam-picker"
 version = "0.1.5"
 description = "Pick a random game from your personal Steam library!"
-authors = ["Jesse Johnson <holocronweaver>"]
+authors = [{ name = "Jesse Johnson", email = "1024369+holocronweaver@users.noreply.github.com" }]
+requires-python = "~=3.9"
+readme = "README.md"
 license = "MPL-2.0"
-readme = "README.org"
-packages = [
-  { include = "steampicker" },
+dependencies = [
+    "appdirs>=1.4.4,<2",
+    "PyYAML~=6.0",
+    "requests>=2.31.0,<3",
+    "setuptools>=75.5.0,<76",
+    "steam>=1.4.3,<2",
 ]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-appdirs = "^1.4.4"
-PyYAML = "^6.0"
-requests = "^2.31.0"
-setuptools = "^75.5.0"
-steam = "^1.4.3"
+[project.scripts]
+steam-picker = "steampicker.steampicker:run"
 
-[tool.poetry.dev-dependencies]
+[dependency-groups]
+dev = []
 
-[tool.poetry.scripts]
-steam-picker = 'steampicker.steampicker:run'
+[tool.hatch.build.targets.sdist]
+include = ["steampicker"]
+
+[tool.hatch.build.targets.wheel]
+include = ["steampicker"]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

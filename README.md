@@ -8,7 +8,7 @@ A Python 3 CLI for picking a random game from your Steam library!
 
 # Installation
 
-Requires Python 3.9 or higher.
+**Requires Python 3.9 or higher.**
 
 ## pipx [recommended]
 
@@ -81,8 +81,7 @@ Assuming your Python package bin is in your `$PATH`, just run `steam-picker` fro
 
 To develop this package or run it without installing:
 
-1.  Install [poetry](https://python-poetry.org/).
-2.  Install dependencies using app root directory: `poetry install`
-3.  Run the app: `poetry run steam-picker`
-4.  Build the app (see `dist` for wheel and archive): `poetry build`
+1. Install [uv](https://docs.astral.sh/uv/).
+1. Run the app: `uv run steam-picker`
+1. Build the app for distribution (see `dist` directory for wheel and archive): `uv build`
 
