@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 from appdirs import AppDirs
+from importlib.resources import files
 from pathlib import Path
-import pkg_resources
 import random
 
 from steampicker import filters, Steam, utility
@@ -12,7 +12,7 @@ def run():
     appdirs = AppDirs('steam-picker')
     creds_path = Path(appdirs.user_config_dir).joinpath('creds.yaml')
 
-    party_time = pkg_resources.resource_string('steampicker', 'party_time.txt')
+    party_time = files('steampicker').joinpath('party_time.txt').read_text(encoding='utf-8')
     if type(party_time) is bytes:
         party_time = party_time.decode()
 
@@ -26,7 +26,7 @@ def run():
     while not exit_app:
         game = random.choice(owned_games)
 
-        if not 'appid' in game:
+        if 'appid' not in game:
             continue
 
         details = steam.getAppDetails(game['appid']) or {}
@@ -38,7 +38,8 @@ def run():
             for filter in active_filters:
                 try:
                     passed = filter.function(details)
-                    if not passed: break
+                    if not passed:
+                        break
                 except KeyError:
                     print("Could not apply filter '{}' on '{}'. Skipping.".format(filter.text, game['name']))
                     passed = False
@@ -76,21 +77,21 @@ def run():
                 filterid = int(reply)
                 try:
                     del active_filters[filterid]
-                except:
+                except Exception:
                     print('Error: unable to delete that filter. Is the ID within range?')
             elif reply.split(' ')[0].strip() in filters.quick:
                 aliases = [x.strip() for x in reply.split(' ')]
                 for alias in aliases:
                     try:
                         active_filters.append(filters.quick[alias])
-                    except:
+                    except Exception:
                         print("Error: alias '{}' could not be applied.".format(alias))
             else:
                 try:
                     text = 'lambda x: ' + reply
                     filter_lambda = eval(text)
                     active_filters.append(filters.Filter(text, filter_lambda))
-                except:
+                except Exception:
                     print('Error: could not add filter. Please check expression.')
         elif any(x in answer for x in ['n', 'q']):
             print("\nAlrighty then, y'all come back now, ya hear?")
