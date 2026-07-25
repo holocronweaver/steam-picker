@@ -8,7 +8,7 @@ A Python 3 CLI for picking a random game from your Steam library!
 
 # Installation
 
-**Requires Python 3.9 or higher.**
+**Requires Python 3.10 or higher.**
 
 ## pipx [recommended]
 
