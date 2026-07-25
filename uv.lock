@@ -272,7 +272,7 @@ sdist = { url = "https://files.pythonhosted.org/packages/9a/31/62ac25584988182de
 
 [[package]]
 name = "steam-picker"
-version = "0.1.5"
+version = "0.1.6"
 source = { editable = "." }
 dependencies = [
     { name = "appdirs" },

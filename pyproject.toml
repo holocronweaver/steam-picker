@@ -1,6 +1,6 @@
 [project]
 name = "steam-picker"
-version = "0.1.5"
+version = "0.1.6"
 description = "Pick a random game from your personal Steam library!"
 authors = [{ name = "Jesse Johnson", email = "1024369+holocronweaver@users.noreply.github.com" }]
 requires-python = ">=3.10, <4"
