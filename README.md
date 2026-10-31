@@ -20,6 +20,16 @@ Add the `--editable` flag if you want to hack on the source code and have your c
 
 `pipx install --editable .`
 
+## uvx
+
+[Install uv](https://docs.astral.sh/uv/) if you haven't already, then run the following command in the app root directory to run the app without installing it:
+
+`uvx --from . steam-picker`
+
+uv caches the built app, so add the `--reinstall` flag to pick up any changes to the source code:
+
+`uvx --reinstall --from . steam-picker`
+
 ## pip
 
 Run the following command in the app root directory:
