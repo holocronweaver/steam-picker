@@ -1,12 +1,24 @@
 #! /usr/bin/env python3
 from appdirs import AppDirs
+import argparse
+from importlib.metadata import PackageNotFoundError, version
 from importlib.resources import files
 from pathlib import Path
 import random
 
 from steampicker import filters, Steam, utility
 
+def get_version():
+    try:
+        return version('steam-picker')
+    except PackageNotFoundError:
+        return 'unknown'
+
 def run():
+    parser = argparse.ArgumentParser(description='Pick a random game from your personal Steam library!')
+    parser.add_argument('--version', action='version', version='%(prog)s ' + get_version())
+    parser.parse_args()
+
     print('Pick a game from your personal Steam library!')
 
     appdirs = AppDirs('steam-picker')
