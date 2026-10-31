@@ -12,7 +12,11 @@ A Python 3 CLI for picking a random game from your Steam library!
 
 ## pipx [recommended]
 
-[Install pipx](https://pipx.pypa.io/) if you haven't already, then run the following command in the app root directory:
+[Install pipx](https://pipx.pypa.io/) if you haven't already, then run:
+
+`pipx install steam-picker`
+
+To install from source instead, run the following command in the app root directory:
 
 `pipx install .`
 
@@ -22,7 +26,11 @@ Add the `--editable` flag if you want to hack on the source code and have your c
 
 ## uvx
 
-[Install uv](https://docs.astral.sh/uv/) if you haven't already, then run the following command in the app root directory to run the app without installing it:
+[Install uv](https://docs.astral.sh/uv/) if you haven't already, then run the following command to run the app without installing it:
+
+`uvx steam-picker`
+
+To run from source instead, run the following command in the app root directory:
 
 `uvx --from . steam-picker`
 
@@ -32,9 +40,11 @@ uv caches the built app, so add the `--reinstall` flag to pick up any changes to
 
 ## pip
 
-Run the following command in the app root directory:
+Run the following command:
 
-`pip3 install --user .`
+`pip3 install --user steam-picker`
+
+To install from source instead, run `pip3 install --user .` in the app root directory.
 
 Feel free to omit the `--user` flag if you normally install packages
 to the root directory.
@@ -94,4 +104,5 @@ To develop this package or run it without installing:
 1. Install [uv](https://docs.astral.sh/uv/).
 1. Run the app: `uv run steam-picker`
 1. Build the app for distribution (see `dist` directory for wheel and archive): `uv build`
+1. Publish the app to PyPI: `uv publish dist/steam_picker-<version>*`
 
