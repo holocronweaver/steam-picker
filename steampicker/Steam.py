@@ -22,7 +22,9 @@ class Steam:
             appids_filter             = None,
             include_free_sub          = True,
             language                  = "en",
-            include_extended_appinfo  = True
+            include_extended_appinfo  = True,
+            include_family_licenses   = False,
+            include_all_free_games    = False
         )
         return response['response']['games']
 
